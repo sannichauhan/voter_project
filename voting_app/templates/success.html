@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; text-align: center; }
+        .success-box { background: #d4edda; color: #155724; padding: 20px; border-radius: 5px; display: inline-block; }
+        a { display: inline-block; margin-top: 15px; color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="success-box">
+        <h2>{{ message }}</h2>
+        <p>Aapka data database mein successfully save ho gaya hai.</p>
+        <a href="{% url 'upload_pdf' %}">Upload Another PDF</a> | 
+        <a href="/admin/voting_app/voterdata/">View in Admin Panel</a>
+    </div>
+</body>
+</html>

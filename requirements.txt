@@ -1,0 +1,5 @@
+django
+pytesseract
+opencv-python
+numpy
+pdf2image

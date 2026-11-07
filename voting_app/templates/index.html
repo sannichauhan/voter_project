@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ग्राम पंचायत डिजिटल चुनाव, पर्ची प्रबंधन एवं सर्वेक्षण 2026</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts (Hind for Hindi Text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Hind', sans-serif;
+            color: #333;
+        }
+
+        /* Top Navbar */
+        .navbar-custom {
+            background-color: #0d6efd;
+            padding: 10px 20px;
+        }
+
+        /* Stat Cards */
+        .stat-card {
+            border: none;
+            border-radius: 12px;
+            background: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-left: 5px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .stat-card.blue { border-left-color: #0d6efd; }
+        .stat-card.green { border-left-color: #198754; }
+        .stat-card.red { border-left-color: #dc3545; }
+        .stat-card.yellow { border-left-color: #ffc107; }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .bg-icon-blue { background-color: #e7f1ff; color: #0d6efd; }
+        .bg-icon-green { background-color: #e6f4ea; color: #198754; }
+        .bg-icon-red { background-color: #fce8e6; color: #dc3545; }
+        .bg-icon-yellow { background-color: #fef7e0; color: #d97706; }
+
+        /* Main Container Cards */
+        .main-card {
+            background: #ffffff;
+            border-radius: 14px;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            padding: 24px;
+        }
+
+        /* Navigation Pills Bar */
+        .nav-pill-custom {
+            background-color: #ffffff;
+            border-radius: 30px;
+            padding: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .nav-pill-custom .btn {
+            border-radius: 25px;
+            font-weight: 600;
+            padding: 8px 18px;
+        }
+
+        /* Form Controls */
+        .form-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 4px;
+        }
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 8px 12px;
+            font-size: 0.92rem;
+        }
+        .form-control:focus, .form-select:focus {
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+        }
+
+        /* Table Styling */
+        .table-custom th {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #555;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+            vertical-align: middle;
+        }
+        .table-custom td {
+            font-size: 0.88rem;
+            vertical-align: middle;
+            padding: 12px 8px;
+        }
+        .badge-custom {
+            font-weight: 500;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        .badge-caste { background-color: #e9ecef; color: #495057; }
+        .badge-religion { background-color: #e8f4fd; color: #0d6efd; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center font-weight-bold" href="#">
+                <i class="fa-solid fa-vote-yea me-2 fs-4"></i>
+                ग्राम पंचायत डिजिटल चुनाव, पर्ची प्रबंधन एवं सर्वेक्षण 2026
+            </a>
+            <div class="ms-auto d-none d-md-block">
+                <input type="text" class="form-control rounded-pill px-3" placeholder="खोजें..." style="width: 200px;">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid px-4 my-4">
+
+        <!-- Top Statistics Cards -->
+        <div class="row g-3 mb-4">
+            <!-- Card 1 -->
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stat-card blue">
+                    <div>
+                        <div class="text-muted small fw-bold">कुल पंजीकृत मतदाता</div>
+                        <div class="fs-2 fw-bold text-primary">15</div>
+                    </div>
+                    <div class="stat-icon bg-icon-blue">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stat-card green">
+                    <div>
+                        <div class="text-muted small fw-bold">कुल मतदान (Votes Cast)</div>
+                        <div class="fs-2 fw-bold text-success">8</div>
+                    </div>
+                    <div class="stat-icon bg-icon-green">
+                        <i class="fa-solid fa-check-square"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stat-card red">
+                    <div>
+                        <div class="text-muted small fw-bold">शेष पेंडिंग वोट</div>
+                        <div class="fs-2 fw-bold text-danger">7</div>
+                    </div>
+                    <div class="stat-icon bg-icon-red">
+                        <i class="fa-solid fa-user-clock"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stat-card yellow">
+                    <div>
+                        <div class="text-muted small fw-bold">पूरा हुआ सर्वेक्षण</div>
+                        <div class="fs-2 fw-bold text-warning">12</div>
+                    </div>
+                    <div class="stat-icon bg-icon-yellow">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Navigation Bar -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="nav-pill-custom d-flex flex-wrap gap-2 justify-content-center justify-content-md-center">
+                    <button class="btn btn-primary"><i class="fa-solid fa-users me-1"></i> मतदाता सूची</button>
+                    <button class="btn btn-light text-secondary"><i class="fa-solid fa-box-archive me-1"></i> डिजिटल वोटिंग (EVM)</button>
+                    <button class="btn btn-light text-secondary"><i class="fa-solid fa-square-poll-vertical me-1"></i> जनमत सर्वेक्षण</button>
+                    <button class="btn btn-light text-secondary"><i class="fa-solid fa-chart-pie me-1"></i> परिणाम व धर्म/जाति विश्लेषण</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="row">            
+            <!-- Left Side: Form Section -->
+
+
+            <!-- Right Side: Table & Filters Section -->
+            <div class="col-12 col-lg-12">
+                <div class="main-card h-100">
+
+                    <!-- Title and Count Badge -->
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold m-0">
+                            <i class="fa-solid fa-list-check me-2 text-primary"></i>ग्राम मतदाता सूची
+                        </h5>
+                        <span class="badge bg-primary px-3 py-2 rounded-pill">15 पंजीकृत</span>
+                    </div>
+
+                    <!-- Search and Filters -->
+                    <div class="row g-2 mb-3">
+                        <div class="col-12 col-md-3">
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+                                <input type="text" class="form-control border-start-0 bg-light" placeholder="नाम, पिता का नाम या EPIC से...">
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3">
+                            <select class="form-select bg-light">
+                                <option>सभी धर्म (All)</option>
+                            </select>
+                        </div>
+                        <div class="col-4 col-md-3">
+                            <select class="form-select bg-light">
+                                <option>सभी जाति(All)</option>
+                            </select>
+                        </div>
+                        <div class="col-4 col-md-3">
+                            <select class="form-select bg-light">
+                                <option>वर्ग (All)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Voter List Table -->
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle table-custom">
+                            <thead>
+                                <tr>
+                                    <th>क्र.</th>
+                                    <th>EPIC ID</th>
+                                    <th>नाम / पिता का नाम</th>
+                                    <th>मकान / उम्र / लिंग</th>
+                                    <th>वर्ग</th>
+                                    <th>धर्म</th>
+                                    <th>जाति</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row 1 -->
+                                <tr>
+                                    <td>1</td>
+                                    <td class="fw-bold text-primary">UP/41/199/0195244</td>
+                                    <td>
+                                        <div class="fw-bold">राजवल्लभ शर्मा</div>
+                                        <div class="text-muted small">पिता/पति: नगीना शर्मा</div>
+                                    </td>
+                                    <td>मकान: 1 | 74 वर्ष | पुरुष</td>
+                                    <td>OBC</td>
+                                    <td>
+                                        <span class="badge badge-custom badge-religion">मुस्लिम</span>
+                                    </td>
+                                    <td>Lonia</td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr>
+                                    <td>2</td>
+                                    <td class="fw-bold text-primary">UP/41/199/0195245</td>
+                                    <td>
+                                        <div class="fw-bold">सुमन देवी</div>
+                                        <div class="text-muted small">पिता/पति: रामेश्वर यादव</div>
+                                    </td>
+                                    <td>मकान: 2 | 38 वर्ष | महिला</td>
+                                    <td>SC</td>
+                                    <td>
+                                        <span class="badge badge-custom badge-religion">मुस्लिम</span>
+                                    </td>
+                                    <td>Lonia</td>
+                                    
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr>
+                                    <td>3</td>
+                                    <td class="fw-bold text-primary">UP/41/199/0195246</td>
+                                    <td>
+                                        <div class="fw-bold">अब्दुल रहीम खान</div>
+                                        <div class="text-muted small">पिता/पति: करीम बख्श</div>
+                                    </td>
+                                    <td>मकान: 5 | 52 वर्ष | पुरुष</td>
+                                    <td>OBC</td>
+                                    <td>
+                                        <span class="badge badge-custom badge-religion">मुस्लिम</span>
+                                    </td>
+                                    <td>Lonia</td>
+                                    
+                                </tr>
+                                <!-- Row 4 -->
+                                <tr>
+                                    <td>4</td>
+                                    <td class="fw-bold text-primary">UP/41/199/0195247</td>
+                                    <td>
+                                        <div class="fw-bold">सुखविंदर सिंह</div>
+                                        <div class="text-muted small">पिता/पति: गुरुदीप सिंह</div>
+                                    </td>
+                                    <td>मकान: 8 | 41 वर्ष | पुरुष</td>
+                                    <td>Gen</td>
+                                    <td>
+                                        <span class="badge badge-custom badge-religion">मुस्लिम</span>
+                                    </td>
+                                    <td>Lonia</td>
+                                </tr>
+                                <!-- Row 5 -->
+                                <tr>
+                                    <td>5</td>
+                                    <td class="fw-bold text-primary">UP/41/199/0195248</td>
+                                    <td>
+                                        <div class="fw-bold">अनीता कुमारी</div>
+                                        <div class="text-muted small">पिता/पति: सुरेश राम</div>
+                                    </td>
+                                    <td>मकान: 12 | 29 वर्ष | महिला</td>
+                                    <td>OBC</td>
+                                    <td>
+                                        <span class="badge badge-custom badge-religion">मुस्लिम</span>
+                                    </td>
+                                    <td>Lonia</td>
+                                </tr>
+                                <!-- Row 6 -->
+                                <tr>
+                                    <td>6</td>
+                                    <td class="fw-bold text-primary">UP/41/199/0195249</td>
+                                    <td>
+                                        <div class="fw-bold">जोसेफ डिसूज़ा</div>
+                                        <div class="text-muted small">पिता/पति: पीटर डिसूज़ा</div>
+                                    </td>
+                                    <td>मकान: 15 | 60 वर्ष | पुरुष</td>
+                                    <td>SC</td>
+                                    <td>
+                                        <span class="badge badge-custom badge-religion">मुस्लिम</span>
+                                    </td>
+                                    <td>Lonia</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
