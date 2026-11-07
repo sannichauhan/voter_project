@@ -1,5 +1,6 @@
 django
 pytesseract
 opencv-python
-numpy
+"numpy<2.0.0"
 pdf2image
+easyocr
